@@ -54,7 +54,7 @@ pipeline {
                  body: "Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}",
                     attachLog : true
                     
-            }
+            
         }
     }
 }
