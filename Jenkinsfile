@@ -53,12 +53,7 @@ pipeline {
                 to: 'ritam22001@gmail.com',
                 subject: "Pipeline ${currentBuild.fullDisplayName}",
                 body: "Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}",
-                attachLog: true,  
-                attachments: [ 
-                    fileName: 'build.log', 
-                    fileType: 'text',
-                    filePath: "${env.WORKSPACE}/build.log"
-                    ]
+                attachLog: true
                 )
         }
     }
