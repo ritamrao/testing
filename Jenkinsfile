@@ -58,6 +58,7 @@ pipeline {
                     fileName: 'build.log', 
                     fileType: 'text',
                     filePath: "${env.WORKSPACE}/build.log"
+                    ]
         }
     }
 }
