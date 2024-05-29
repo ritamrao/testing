@@ -47,14 +47,14 @@ pipeline {
     }
 
     post {
-        always {
+    always {
             // Configure email notifications
-            emailext (
-                to: 'ritam22001@gmail.com',
-                subject: "Pipeline ${currentBuild.fullDisplayName}",
-                body: "Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}",
-                attachLog: true
-                )
+            mail to: 'ritam22001@gmail.com',
+                 subject: "Pipeline ${currentBuild.fullDisplayName}",
+                 body: "Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}",
+                    attachLog : true
+                    
+            }
         }
     }
 }
