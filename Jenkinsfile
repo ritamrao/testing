@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Defining environment variables here
         STAGING_SERVER = 'AWS_EC2staging.rao.com'
-        PRODUCTION_SERVER = 's223417356.au'
+        PRODUCTION_SERVER = 's223417356.au.com'
         RECIPIENT_EMAIL = 'ritam22001@gmail.com'
     }
 
