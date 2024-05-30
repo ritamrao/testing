@@ -48,10 +48,16 @@ pipeline {
 
     post {
         always {
-            // Configure email notifications
-            mail to: 'ritam22001@gmail.com',
-                 subject: "Pipeline ${currentBuild.fullDisplayName}",
-                 body: "Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}"
+            script {
+                def log = currentBuild.rawBuild.getLog(1000).join('\n')
+                emailext(
+                    to: 'ritam22001@gmail.com',
+                    subject: "Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}",
+                    body: """<p>Pipeline ${currentBuild.fullDisplayName} completed with status: ${currentBuild.currentResult}</p>
+                             <p>Build Log:</p><pre>${log}</pre>""",
+                    attachLog: true
+                )
+            }
         }
     }
 }
